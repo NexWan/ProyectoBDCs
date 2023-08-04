@@ -16,6 +16,6 @@
             <ColumnDefinition Width="733*"/>
         </Grid.ColumnDefinitions>
         <Button Grid.Column="1" Content="Mostrar algo" HorizontalAlignment="Left" Margin="202,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,0.479" Height="107" Width="254" Click="Button_Click"/>
-        <Label x:Name="Modificar" Grid.Column="1" Content="Se deberia modificare&#xD;&#xA;" Margin="221,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="110" Width="235" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="Modificar" Grid.Column="1" Content="Se deberia modificare&#xD;&#xA;" Margin="202,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="110" Width="235" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
