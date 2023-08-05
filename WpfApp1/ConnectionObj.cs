@@ -16,13 +16,13 @@ namespace WpfApp1
             conn = new OracleConnection();
         }
 
-        public OracleConnection getConnection()
+        public OracleConnection getConnection(string user, string pwd)
         {
             try
             {
                 conn.ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)" +
                     "(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)))" +
-                    ";User Id=prueba;Password=prueba;";
+                    $";User Id={user};Password={pwd};";
             }
             catch (Exception ex)
             {

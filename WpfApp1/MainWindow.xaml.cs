@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Oracle.ManagedDataAccess.Types;
 using Oracle.ManagedDataAccess.Client;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Security;
 
 namespace WpfApp1
 {
@@ -25,24 +27,58 @@ namespace WpfApp1
     {
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ClickLogin(object sender, RoutedEventArgs e)
         {
-            OracleConnection conn = new ConnectionObj().getConnection();
+            string user = UserBox.Text;
+            string pwd = ConvertToUnsecureString(Password.SecurePassword);
+            OracleConnection conn = new ConnectionObj().getConnection("login", "login");
 
             conn.Open();
 
             OracleCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT * FROM tab";
+            cmd.CommandText = $"SELECT * FROM users WHERE LOWER(username) = LOWER('{user}') AND password = '{pwd}'";
 
-            OracleDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                Modificar.Content = reader.GetString(0);
+                OracleDataReader reader = cmd.ExecuteReader();
+                MessageBox.Show(pwd);
+                if (reader.Read())
+                {
+                    MessageBox.Show($"Esto es una prueba\n user: {user} \n pass: {pwd}", "Prueba", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show($"Has sido loggeado como: {reader.GetString(0)}", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecto, verifica los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+
+        private string ConvertToUnsecureString(SecureString securePassword)
+        {
+            IntPtr unmanagedPassword = IntPtr.Zero;
+            try
+            {
+                unmanagedPassword = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
+                int passwordLength = securePassword.Length;
+                char[] passwordChars = new char[passwordLength];
+                Marshal.Copy(unmanagedPassword, passwordChars, 0, passwordLength);
+                return new string(passwordChars);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedPassword);
+            }
         }
     }
 }

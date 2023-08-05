@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Login" Height="450" Width="800">
     <Grid Margin="10,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="235*"/>
-            <RowDefinition Height="199*"/>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="253*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="67*"/>
             <ColumnDefinition Width="733*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Content="Mostrar algo" HorizontalAlignment="Left" Margin="202,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,0.479" Height="107" Width="254" Click="Button_Click"/>
-        <Label x:Name="Modificar" Grid.Column="1" Content="Se deberia modificare&#xD;&#xA;" Margin="202,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="110" Width="235" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="1" Content="LOGIN&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="248,0,0,0" VerticalAlignment="Center" Height="53" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Width="162" FontFamily="Cascadia Mono"/>
+        <Button Grid.Column="1" Content="Iniciar sesion&#xD;&#xA;" HorizontalAlignment="Left" Margin="270,184,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.374,2.245" Click="ClickLogin" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Height="22" FontFamily="Cascadia Code SemiBold" FontSize="14" Width="119"/>
+        <Label Grid.Column="1" Content="Usuario&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="304,10,0,0" VerticalAlignment="Top" Height="31" Grid.Row="1" Width="50"/>
+        <TextBox x:Name="UserBox" Grid.Column="1" HorizontalAlignment="Left" Margin="269,46,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" TextAlignment="Center" FontSize="20" AcceptsTab="True" />
+        <Label Grid.Column="1" Content="Clave&#xA;&#xA;" HorizontalAlignment="Left" Margin="304,91,0,0" VerticalAlignment="Top" Height="31" Grid.Row="1" Width="50"/>
+        <PasswordBox x:Name="Password" Grid.Column="1" HorizontalAlignment="Left" Margin="269,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" FontSize="20"/>
     </Grid>
 </Window>
