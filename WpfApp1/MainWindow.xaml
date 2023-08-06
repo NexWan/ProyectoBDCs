@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
+        Title="Login" Height="450" Width="600" Icon="/R-6797028-1426816720-7503.jpg">
     <Grid Margin="10,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="181*"/>
@@ -15,11 +15,11 @@
             <ColumnDefinition Width="67*"/>
             <ColumnDefinition Width="733*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="1" Content="LOGIN&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="248,0,0,0" VerticalAlignment="Center" Height="53" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Width="162" FontFamily="Cascadia Mono"/>
-        <Button Grid.Column="1" Content="Iniciar sesion&#xD;&#xA;" HorizontalAlignment="Left" Margin="270,184,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.374,2.245" Click="ClickLogin" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Height="22" FontFamily="Cascadia Code SemiBold" FontSize="14" Width="119"/>
-        <Label Grid.Column="1" Content="Usuario&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="304,10,0,0" VerticalAlignment="Top" Height="31" Grid.Row="1" Width="50"/>
-        <TextBox x:Name="UserBox" Grid.Column="1" HorizontalAlignment="Left" Margin="269,46,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" TextAlignment="Center" FontSize="20" AcceptsTab="True" />
-        <Label Grid.Column="1" Content="Clave&#xA;&#xA;" HorizontalAlignment="Left" Margin="304,91,0,0" VerticalAlignment="Top" Height="31" Grid.Row="1" Width="50"/>
-        <PasswordBox x:Name="Password" Grid.Column="1" HorizontalAlignment="Left" Margin="269,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" FontSize="20"/>
+        <Label Grid.Column="1" Content="LOGIN&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" Height="53" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Width="162" FontFamily="Cascadia Code"/>
+        <Button Grid.Column="1" Content="Iniciar sesion&#xD;&#xA;" HorizontalAlignment="Left" Margin="187,154,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-0.374,2.245" Click="ClickLogin" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" Height="22" FontFamily="Cascadia Code SemiBold" FontSize="14" Width="119"/>
+        <Label Grid.Column="1" Content="Usuario&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="221,161,0,0" VerticalAlignment="Top" Height="31" Width="50" Grid.RowSpan="2"/>
+        <TextBox x:Name="UserBox" Grid.Column="1" HorizontalAlignment="Left" Margin="186,16,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" TextAlignment="Center" FontSize="20" AcceptsTab="True" />
+        <Label Grid.Column="1" Content="Clave&#xA;&#xA;" HorizontalAlignment="Left" Margin="221,61,0,0" VerticalAlignment="Top" Height="31" Grid.Row="1" Width="50"/>
+        <PasswordBox x:Name="Password" Grid.Column="1" HorizontalAlignment="Left" Margin="186,97,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="30" FontSize="20"/>
     </Grid>
 </Window>

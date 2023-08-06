@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.CustomInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="CustomInputDialog" Width="300">
+    <Grid>
+        <!-- Wrap the StackPanel in a Grid and set its VerticalAlignment to Top -->
+        <Grid VerticalAlignment="Top">
+            <!-- The StackPanel to hold the dynamic content grids -->
+            <StackPanel x:Name="dynamicContentPanel">
+                <!-- The dynamically generated content grids will be placed here -->
+            </StackPanel>
+        </Grid>
+
+        <!-- Create a Grid to hold the OK button -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <!-- Dynamic content will take all available space -->
+                <RowDefinition Height="Auto"/>
+                <!-- OK button will take only the space it needs -->
+            </Grid.RowDefinitions>
+
+            <!-- The OK button -->
+            <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" HorizontalAlignment="Center" Margin="0,5" Width="83" Height="32" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</Window>

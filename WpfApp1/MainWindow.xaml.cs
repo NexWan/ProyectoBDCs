@@ -51,6 +51,8 @@ namespace WpfApp1
                 {
                     MessageBox.Show($"Esto es una prueba\n user: {user} \n pass: {pwd}", "Prueba", MessageBoxButton.OK, MessageBoxImage.Information);
                     MessageBox.Show($"Has sido loggeado como: {reader.GetString(0)}", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Admin admin = new Admin(user);
+                    admin.Show();
                 }
                 else
                 {
